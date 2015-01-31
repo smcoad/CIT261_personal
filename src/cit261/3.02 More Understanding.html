@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Link Transition</title>
+  <style>
+body{
+  width:90%;
+  margin:0 auto;
+}
+.wrapper{
+  margin:3em 0;
+}
+a,a:visited,a:hover,a:active{
+	position:relative;
+  transition:0.5s color ease;
+	text-decoration:none;
+	color:#29ACD4;
+	font-size:2.5em;
+}
+a:hover{
+	color:#A61E20;
+}
+a.before:before,a.after:after{
+  content: "";
+  transition:0.5s all ease;
+  position:absolute;
+}
+a.after:after{
+  bottom:-0.25em;
+}
+a.before:before,a.after:after{
+  height:5px;
+  height:0.35rem;
+  width:0;
+  background:#A61E20;
+}
+a.before:hover:before,a.after:hover:after{
+  width:100%;
+}
+a.first:after{
+  left:0;
+}
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <a class="first after" href="#">Left to Right</a>
+</div>
+</body>
+</html>
