@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+function person(first, last, age, eye) {
+    this.nameFirst = first;
+    this.nameLast = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+
+var myFather = new person("Frank", "Doe", 50, "brown");
+var myMother = new person("Lisa", "Rally", 48, "green");
+
+document.getElementById("demo").innerHTML =
+myFather.nameFirst + " is " + myFather.age + " and has " + myFather.eyeColor + " eyes." + " " +
+myMother.nameFirst + " is " + myMother.age + " and has " + myMother.eyeColor + " eyes.";
+</script>
+
+</body>
+</html>﻿

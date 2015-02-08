@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var person = {gender:"male", height:"5'9", eyes:"green", nameFirst:"Scott", nameLast:"Coad"};
+document.getElementById("demo").innerHTML = 
+person.nameFirst + " " + person["nameLast"] + " is a " + person.gender + " who is " + person["height"] + " and has " + person.eyes + " eyes.";
+</script>
+
+</body>
+</html>
