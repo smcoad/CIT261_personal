@@ -1,0 +1,14 @@
+[
+{
+"display": "Facebook",
+"url": "http://www.facebook.com"
+},
+{
+"display": "Google+",
+"url": "http://plus.google.com"
+},
+{
+"display": "Twitter",
+"url": "http://www.twitter.com"
+}
+]

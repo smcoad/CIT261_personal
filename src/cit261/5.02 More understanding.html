@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="id01"></div>
+
+<script>
+    //creates the XMLHttp request object
+var xmlhttp = new XMLHttpRequest();
+    //creates variable to request our text file
+var url = "textfile.txt";
+    
+    //this event is triggered every time the readyState changes. Changes from 0 (not connected) to 4 (connection complete)
+    //status of 200 means "ok" (404 is page not found)
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var myArr = JSON.parse(xmlhttp.responseText);
+        myFunction(myArr);
+    }
+}
+    //get the text file, find the url, and work asynchronously (meaning it operates independently of other processes.)
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(arr) {
+    //displays blank space
+    var out = "";
+    //loopes through the list
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out += '<a href="' + arr[i].url + '">' + 
+        arr[i].display + '</a><br>';
+    }
+    //displays the list in the blank div
+    document.getElementById("id01").innerHTML = out;
+}
+</script>
+
+</body>
+</html>
