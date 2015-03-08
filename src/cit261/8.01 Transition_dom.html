@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <title>LinkTransition</title>
+  <style>
+  body{
+  width:90%;
+  margin:0 auto;
+}
+.wrapperM{
+  margin:3em 0;
+  margin-left:auto
+}
+.wrapperT{
+  margin:3em 0;
+  margin-left:auto
+}
+.wrapperW{
+  margin:3em 0;
+  margin-left:auto
+}
+a,a:visited,a:hover,a:active{
+position:relative;
+  transition:0.2s color ease;
+text-decoration:none;
+color:#29ACD4;
+font-size:2em;
+}
+a:hover{
+color:#A61E20;
+}
+a.before:before,a.after:after{
+  content: "";
+  transition:0.2s all ease;
+  position:absolute;
+}
+
+a.before:hover:before,a.after:hover:after{
+  width:100%;
+}
+#example {
+padding-left: 10px;
+}
+#header {
+width:290px; height: 50px; background-color:#5C94C8; padding-top:15px; padding-left:5px ;font-size: 2em; color: white;
+}
+button {width: 100%; text-align:left}
+  </style>
+<body>
+<div id="header">
+Scheduler
+</div>
+<div class="wrapperM">
+<button onclick="myMonday()"><a class="first after" href="#">Monday</a></button>
+<div id="example" class="mon"></div>
+</div>
+<script>
+function myMonday() {
+    var x = document.getElementsByClassName("mon");
+ x[0].innerHTML = "Today you have no appointments";
+}
+</script>
+
+<div class="wrapperT">
+<button onclick="myTuesday()"><a class="first after" href="#">Tuesday</a></button>
+<div id="example" class="tue"></div>
+</div>
+<script>
+function myTuesday() {
+    var x = document.getElementsByClassName("tue");
+    x[0].innerHTML = "CIT261 9:00am - 10:00am";
+}
+</script>
+
+<div class="wrapperW">
+<button onclick="myWednesday()"><a class="first after" href="#">Wednesday</a></button>
+<div id="example" class="wed"></div>
+</div>
+<script>
+function myWednesday() {
+    var x = document.getElementsByClassName("wed");
+    x[0].innerHTML = "Work 12:00pm - 5:00pm";
+}
+</script>
+</body>
+</html>﻿
